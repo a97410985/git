@@ -1,0 +1,7 @@
+class Test {
+  static RIGHT() {
+    haha();
+    haha2()
+    let b = ChangeMe;
+  }
+}

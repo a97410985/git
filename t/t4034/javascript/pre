@@ -1,0 +1,32 @@
+// DecimalLiteral
+123
+0.123
+0.123e+5
+0.123E+5
+0.123e5
+1222222222222222223334444n
+// HexIntegerLiteral
+0x10
+0X6Fa1
+0x123_456
+0x1234182989812f1289an
+// OctalIntegerLiteral
+05
+0o6
+0O7
+0512_567
+0o424242424242424242424242424242666666n
+// BinaryIntegerLiteral
+0b1001
+0B0110
+0b0001_1001_0011
+0b1111111111111111111111111111111111111n
+// punctuations
+{a} (a)
+a;
+[1,2]
+[ 1, 2, ...params ]
+a<=2 a>=2 a==2 a!=2 a===2 a!==2 a^=2 a=>2
+a+=b a*=b a**=b a||=b
+b+c a-- a>>b a>>>b a>>=b
+a&&b a||b a&&=b

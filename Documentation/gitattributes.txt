@@ -828,6 +828,8 @@ patterns are available:
 
 - `java` suitable for source code in the Java language.
 
+- `javascript suitable for source code in the JavaScript language.
+
 - `markdown` suitable for Markdown documents.
 
 - `matlab` suitable for source code in the MATLAB and Octave languages.
