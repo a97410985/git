@@ -168,6 +168,38 @@ PATTERNS("java",
 	 "|[-+0-9.e]+[fFlL]?|0[xXbB]?[0-9a-fA-F]+[lL]?"
 	 "|[-+*/<>%&^|=!]="
 	 "|--|\\+\\+|<<=?|>>>?=?|&&|\\|\\|"),
+
+PATTERNS("javascript",
+	 /* don't match the expression may contain parenthesis, because it is not a function declaration */
+	 "!^[ \t]*(if|do|while|for|with|switch|catch|import|return)\n"
+	 /* don't match statement */
+	 "!;\n"
+	 /* match normal function */
+	 "^((export[\t ]+)?(async[\t ]+)?function[\t ]*[\t *]*[$_[:alpha:]][$_[:alnum:]]*[\t ]*\\(.*)\n"
+	 /* match JavaScript variable declaration with a lambda expression */
+	 "^[\t ]*((const|let|var)[\t ]*[$_[:alpha:]][$_[:alnum:]]*[\t ]*=[\t ]*"
+	 "(\\(.*\\)|[$_[:alpha:]][$_[:alnum:]]*)[\t ]*=>[\t ]*\\{?)\n"
+	 /* match exports for anonymous fucntion */
+	 "^(exports\\.[$_[:alpha:]][$_[:alnum:]]*[\t ]*=[\t ]*(\\(.*\\)|[$_[:alpha:]][$_[:alnum:]]*)[\t ]*=>.*)\n"
+	 /* match assign function to LHS */
+	 "^(.*=[\t ]*function[\t ]*([$_[:alpha:]][$_[:alnum:]]*)?[\t ]*\\(.*)\n"
+	 /* match normal function in object literal */
+	 "^[\t ]*([$_[:alpha:]][$_[:alnum:]]*[\t ]*:[\t ]*function[\t ].*)\n"
+	 /* don't match the function in class, which has more than one ident level */
+	 "!^(\t{2,}|[ ]{5,})\n"
+	 /* match function in class */
+	 "^[\t ]*((static[\t ]+)?((async|get|set)[\t ]+)?[$_[:alpha:]][$_[:alnum:]]*[\t ]*\\(.*)",
+	 /* word regex */
+	 /* hexIntegerLiteral, octalIntegerLiteral, binaryIntegerLiteral, DecimalLiteral and its big version */
+	 "(0[xXoObB])?[0-9a-fA-F][_0-9a-fA-F]*n?"
+	 /* DecimalLiteral may be float */
+	 "|(0|[1-9][_0-9]*)?\\.?[0-9][_0-9]*([eE][+-]?[_0-9]+)?"
+	 /* punctuations */
+	 "|\\.{3}|<=|>=|==|!=|={3}|!==|\\*{2}|\\+{2}|--|<<|>>"
+	 "|>>>|&&|\\|{2}|\\?{2}|\\+=|-=|\\*=|%=|\\*{2}="
+	 "|<<=|>>=|>>>=|&=|\\|=|\\^=|&&=|\\|{2}=|\\?{2}=|=>"
+	 /* identifiers */
+	 "|[$_[:alpha:]][$_[:alnum:]]*"),
 PATTERNS("markdown",
 	 "^ {0,3}#{1,6}[ \t].*",
 	 /* -- */

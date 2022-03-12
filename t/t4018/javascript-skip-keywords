@@ -1,0 +1,34 @@
+function RIGHT(a, b) {
+  import("./async1")
+  if (a > 1) {
+    // ...
+  }
+  do {
+    // ...
+  } while (i < 5);
+  for (const element of array1) {
+    console.log(element)
+  }
+  with(o) {
+    console.log(x)
+  }
+  switch (expr) {
+    case 'a':
+      // ...
+      break;
+    case 'b':
+      // ...
+      break;
+    default:
+      // ...
+  }
+  try {
+    // ...
+    return (a + c)
+  } 
+  catch (error) {
+    // ...
+  }
+
+  return a + b; // ChangeMe
+}

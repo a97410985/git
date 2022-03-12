@@ -1,0 +1,6 @@
+class Test {
+  RIGHT() {
+    let a = 4;
+    let b = ChangeMe;
+  }
+}

@@ -1,0 +1,7 @@
+const obj = {
+    RIGHT: function (elems, callback, arg) {
+        var length, value;
+        // ...
+        return ChangeMe
+    }
+}

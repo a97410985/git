@@ -1,0 +1,11 @@
+class Test {
+  RIGHT(
+      aaaaaaaaaa,
+      bbbbbbbbbb,
+      cccccccccc,
+      dddddddddd
+  ) {
+    let a = 4;
+    let b = ChangeMe;
+  }
+}

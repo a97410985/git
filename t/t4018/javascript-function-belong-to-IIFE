@@ -1,0 +1,6 @@
+(function () {
+  this.$RIGHT = function (needle, modifier) {
+      let a = 5;
+      return ChangeMe;
+  };
+}).call(aaaa.prototype);

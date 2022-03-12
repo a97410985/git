@@ -1,0 +1,10 @@
+function test(a, b) {
+  return {
+			RIGHT: function () {
+				currentUpdateRemovedChunks.forEach(function (chunkId) {
+					delete $installedChunks$[chunkId];
+				});
+				currentUpdateRemovedChunks = ChangeMe;
+   }
+  }
+}
